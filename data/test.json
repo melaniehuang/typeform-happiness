@@ -1,0 +1,57 @@
+{ "http_status":200,
+  
+  "stats":{
+    "responses":{ 
+      "showing":6,"total":9,"completed":6
+    }
+  },
+  
+  "questions":[
+    {"id":"listimage_34064335_choice","question":"\"I have input into how things are done\"","field_id":34064335},
+    {"id":"listimage_34064345_choice","question":"\"I’m appreciated for what I do\"","field_id":34064345},
+    {"id":"listimage_34064350_choice","question":"\"I know what I’m supposed to be doing\"","field_id":34064350},
+    {"id":"listimage_34064355_choice","question":"\"I work on things I’m good at\"","field_id":34064355},
+    {"id":"listimage_34064352_choice","question":"\"I’m treated well and equally to others\"","field_id":34064352}
+   ],
+   
+   "responses":[
+     { "completed":"1",
+       "token":"591a6c98315cfabf0a1d2b52a5bd781a",
+       "metadata":{
+         "browser":"default",
+         "platform":"other",
+         "date_land":"2016-10-14 07:42:42",
+         "date_submit":"2016-10-14 07:42:55",
+         "user_agent":"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/53.0.2785.143 Safari\/537.36",
+         "referer":"https:\/\/mel230.typeform.com\/to\/kHvr0z","network_id":"fcb089cd95"
+        },
+       "hidden":[],
+       "answers":{
+         "listimage_34064335_choice":"Sad",
+         "listimage_34064345_choice":"Neutral",
+         "listimage_34064350_choice":"Sad",
+         "listimage_34064355_choice":"Happy",
+         "listimage_34064352_choice":"Happy"
+       }
+     },     
+     { "completed":"1",
+       "token":"591a6c98315cfabf0a1d2b52a5bd781a",
+       "metadata":{
+         "browser":"default",
+         "platform":"other",
+         "date_land":"2016-10-14 07:42:42",
+         "date_submit":"2016-10-14 07:42:55",
+         "user_agent":"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/53.0.2785.143 Safari\/537.36",
+         "referer":"https:\/\/mel230.typeform.com\/to\/kHvr0z","network_id":"fcb089cd95"
+        },
+       "hidden":[],
+       "answers":{
+         "listimage_34064335_choice":"Sad",
+         "listimage_34064345_choice":"Neutral",
+         "listimage_34064350_choice":"Sad",
+         "listimage_34064355_choice":"Happy",
+         "listimage_34064352_choice":"Happy"
+       }
+     }
+   ]
+}
