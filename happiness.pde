@@ -18,8 +18,20 @@ void setup() {
 void draw() {
   // questions are: 
   // iterate through each hashmap and check values
-  // 
+  StringList getAllEmotions = new StringList();
   
-  HashMap<String, String> count = questiontoAnswers.get(0);  
-  println(count.get("\"I have input into how things are done\""));
+  for (int q = 0; q < questiontoAnswers.size(); q++){
+    HashMap<String, String> count = questiontoAnswers.get(q);    
+    getAllEmotions.append(count.get("\"I have input into how things are done\""));
+    getAllEmotions.append(count.get("\"I’m appreciated for what I do\""));
+    getAllEmotions.append(count.get("\"I know what I’m supposed to be doing\""));
+    getAllEmotions.append(count.get("\"I work on things I’m good at\""));
+    getAllEmotions.append(count.get("\"I’m treated well and equally to others\""));
+  }
+  
+  for (int e = 0; e < getAllEmotions.size(); e++){
+    String emotionCheck = getAllEmotions.get(e);
+    println(emotionCheck);
+  }
+  
 }
