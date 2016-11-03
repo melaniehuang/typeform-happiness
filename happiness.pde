@@ -9,15 +9,30 @@ JSONArray responses;
 StringList titles;
 ArrayList<HashMap<String, String>> questiontoAnswers = new ArrayList<HashMap<String, String>>();
 
+PImage happy;
+PImage neutral;
+PImage sad;
+
+Mover mover;
+
 void setup() {
-  background(#62FA9D); 
+  background(#ffcc26);
+  size(1200,900);
   getJSONData("https://api.typeform.com/v1/form/kHvr0z?key=d8a49ffae6391b0d69921cd3287a7542617c4419&completed=true");
-  noLoop();
+  happy = loadImage("happy.png");
+  neutral = loadImage("neutral.png");
+  sad = loadImage("sad.png");
+  
+  mover = new Mover();
 }
 
 void draw() {
-  // questions are: 
-  // iterate through each hashmap and check values
+  background(#ffcc26);
+  
+  //mover.update();
+  //mover.edges();
+  //mover.display();
+
   StringList getAllEmotions = new StringList();
   
   for (int q = 0; q < questiontoAnswers.size(); q++){
@@ -32,6 +47,15 @@ void draw() {
   for (int e = 0; e < getAllEmotions.size(); e++){
     String emotionCheck = getAllEmotions.get(e);
     println(emotionCheck);
+    
+    if (emotionCheck.equals("Happy")){
+      image(happy, random(width), random(height),100,100);
+    } else if (emotionCheck.equals("Neutral")){
+      image(neutral, random(width), random(height),100,100);
+    } else if (emotionCheck.equals("Sad")){
+      image(sad, random(width), random(height),100,100);
+    } else {
+      println("No emotion");
+    }
   }
-  
 }
