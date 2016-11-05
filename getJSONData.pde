@@ -1,7 +1,7 @@
 void getJSONData(String requestURL) {
-  json = loadJSONObject(requestURL);
-  questions = json.getJSONArray("questions");
-  titles = new StringList();
+  JSONObject json = loadJSONObject(requestURL);
+  JSONArray questions = json.getJSONArray("questions");
+  StringList titles = new StringList();
   
   HashMap<String,String> idtoQuestion = new HashMap<String,String>();
 
@@ -15,7 +15,7 @@ void getJSONData(String requestURL) {
     }
   }
   
-  responses = json.getJSONArray("responses");
+  JSONArray responses = json.getJSONArray("responses");
 
   for (int r = 0; r < responses.size(); r++){
     //get one response

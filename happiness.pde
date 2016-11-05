@@ -2,13 +2,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Iterator;
 
-JSONObject json;
-JSONArray questions;
-JSONArray responses;
-
-StringList titles;
-ArrayList<HashMap<String, String>> questiontoAnswers = new ArrayList<HashMap<String, String>>();
-
 PImage happy;
 PImage neutral;
 PImage sad;
@@ -18,6 +11,7 @@ Mover[] hMovers;
 Mover[] nMovers;
 Mover[] sMovers;
 
+ArrayList<HashMap<String, String>> questiontoAnswers = new ArrayList<HashMap<String, String>>();
 StringList getAllEmotions;
 
 void setup() {
@@ -43,18 +37,23 @@ void setup() {
   int hCount = 0;
   int nCount = 0;
   int sCount = 0;
-  
+  float happinessMeter = 0.0;
   for (int i = 0; i < getAllEmotions.size(); i++) {
     String emotionCheck = getAllEmotions.get(i);
-    
     if (emotionCheck.equals("Happy")){
       hCount++;
+      happinessMeter += 1;
     } else if (emotionCheck.equals("Neutral")){
       nCount++;
     } else if (emotionCheck.equals("Sad")){
       sCount++;
+      happinessMeter -= 1;
     }
   }
+  
+  //Calculate overall happiness
+  happinessMeter = happinessMeter/(getAllEmotions.size());
+  println(happinessMeter);
    
   hMovers = new Mover[hCount];
   nMovers = new Mover[nCount];
