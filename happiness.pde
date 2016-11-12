@@ -1,3 +1,5 @@
+//Participate in the survey: 
+
 import java.util.Map;
 import java.util.Set;
 import java.util.Iterator;
@@ -13,9 +15,10 @@ Mover[] sMovers;
 
 ArrayList<HashMap<String, String>> questiontoAnswers = new ArrayList<HashMap<String, String>>();
 StringList getAllEmotions;
+float happinessMeter = 0.0;
 
 void setup() {
-  background(#18F88C);
+  background(#FFEC15);
   size(1200,900, P2D);
   getJSONData("https://api.typeform.com/v1/form/kHvr0z?key=d8a49ffae6391b0d69921cd3287a7542617c4419&completed=true");
   
@@ -37,23 +40,24 @@ void setup() {
   int hCount = 0;
   int nCount = 0;
   int sCount = 0;
-  float happinessMeter = 0.0;
+  
   for (int i = 0; i < getAllEmotions.size(); i++) {
-    String emotionCheck = getAllEmotions.get(i);
-    if (emotionCheck.equals("Happy")){
-      hCount++;
-      happinessMeter += 1;
-    } else if (emotionCheck.equals("Neutral")){
-      nCount++;
-    } else if (emotionCheck.equals("Sad")){
-      sCount++;
-      happinessMeter -= 1;
-    }
+   String emotionCheck = getAllEmotions.get(i);
+   
+   if (emotionCheck.equals("Happy")){
+     hCount++;
+     happinessMeter += 1; 
+   } else if (emotionCheck.equals("Neutral")){
+     nCount++;
+   } else if (emotionCheck.equals("Sad")){
+     sCount++;
+     happinessMeter -= 1;
+   }
   }
   
-  //Calculate overall happiness
+  println("Happy = " + hCount + ", Neutral = " + nCount + ", Sad = " + sCount);
+
   happinessMeter = happinessMeter/(getAllEmotions.size());
-  println(happinessMeter);
    
   hMovers = new Mover[hCount];
   nMovers = new Mover[nCount];
@@ -71,14 +75,15 @@ void setup() {
     sMovers[i] = new Mover(random(1,10),0); 
   }
   
-  println(hCount + ", " + nCount + ", " + sCount);
 }
 
 void draw() {
-  background(#f0f0f0);
-  // green: 18F88C
-  // blue: 322FED
-  
+  background(#FFEC15);
+  println(happinessMeter);
+  float currentHappiness = map(happinessMeter, -1, 1, -400, 0);
+  smiley(currentHappiness);
+  println(currentHappiness);
+
   for (int i = 0; i < hMovers.length; i++) {
     hMovers[i].update();
     hMovers[i].display(happy);
