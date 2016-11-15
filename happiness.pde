@@ -1,4 +1,4 @@
-//Participate in the survey: 
+//Participate in the survey: https://mel230.typeform.com/to/dEcJXj
 
 import java.util.Map;
 import java.util.Set;
@@ -20,7 +20,7 @@ float happinessMeter = 0.0;
 void setup() {
   background(#FFEC15);
   size(1200,900, P2D);
-  getJSONData("https://api.typeform.com/v1/form/kHvr0z?key=d8a49ffae6391b0d69921cd3287a7542617c4419&completed=true");
+  getJSONData("https://api.typeform.com/v1/form/dEcJXj?key=d8a49ffae6391b0d69921cd3287a7542617c4419&completed=true");
   
   happy = loadImage("happy.png");
   neutral = loadImage("neutral.png");
@@ -30,12 +30,17 @@ void setup() {
   
   for (int q = 0; q < questiontoAnswers.size(); q++){
     HashMap<String, String> count = questiontoAnswers.get(q);    
-    getAllEmotions.append(count.get("\"I have input into how things are done\""));
-    getAllEmotions.append(count.get("\"I’m appreciated for what I do\""));
-    getAllEmotions.append(count.get("\"I know what I’m supposed to be doing\""));
-    getAllEmotions.append(count.get("\"I work on things I’m good at\""));
-    getAllEmotions.append(count.get("\"I’m treated well and equally to others\""));
+    getAllEmotions.append(count.get("\"I have input into how things are done.\""));
+    getAllEmotions.append(count.get("\"I'm appreciated for what I do.\""));
+    getAllEmotions.append(count.get("\"I know what I'm supposed to be doing.\""));
+    getAllEmotions.append(count.get("\"I work on things I'm good at.\""));
+    getAllEmotions.append(count.get("\"I do work that's interesting to me.\""));
+    getAllEmotions.append(count.get("\"I'm treated well and equally to others\""));
+    getAllEmotions.append(count.get("\"I've got the support and resources I need to do good work\""));
+    getAllEmotions.append(count.get("\"I'm doing work that challenges me\""));
   }
+  
+  println(getAllEmotions);
   
   int hCount = 0;
   int nCount = 0;

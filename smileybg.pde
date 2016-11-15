@@ -4,8 +4,6 @@ void smiley(float howHappy){
   ellipse(width/4,340,40,40);
   ellipse(width/2+(width/4),340,40,40);
   
-  //println(howHappy);
- 
   stroke(0);
   strokeWeight(40);
   noFill();
