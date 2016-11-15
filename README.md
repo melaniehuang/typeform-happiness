@@ -4,7 +4,7 @@ Playing with Typeform API and JSON Data to visualise happiness results
 Typeform survey on happiness:
 https://mel230.typeform.com/to/dEcJXj
 
-Visualising emotional data from the following statements into emoji:
+Visualising emotional data from the following statements:
 - "I have input into how things are done"
 - "I'm appreciated for what I do."
 - "I know what I'm supposed to be doing."
@@ -17,10 +17,10 @@ Visualising emotional data from the following statements into emoji:
 And the following responses:
 - Happy emoji
 - Neutral emoji
-- Sad emoji\
+- Sad emoji
 
 Result:
 - All responses are shown as an equivalent emoji
 - Smiley in background represents overall "happiness"
 
-[Smiley for the camera](http://i.imgur.com/z4xAoFO.png)
+![Smiley for the camera](http://i.imgur.com/z4xAoFO.png)
